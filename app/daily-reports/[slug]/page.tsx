@@ -36,7 +36,9 @@ export default async function DailyReportDetailPage({
           ← Back to Daily Reports
         </Link>
 
-        <p className="mt-8 text-sm text-gray-500">{data.date || slug}</p>
+        <p className="mt-8 text-sm text-gray-500">
+          {data.date instanceof Date ? data.date.toLocaleDateString() : data.date || slug}
+        </p>
 
         <h1>{data.title || slug}</h1>
 

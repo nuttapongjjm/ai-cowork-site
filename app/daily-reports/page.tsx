@@ -45,7 +45,9 @@ export default function DailyReportsPage() {
               href={`/daily-reports/${report.slug}`}
               className="block rounded-xl border border-gray-800 p-5 hover:bg-gray-900"
             >
-              <p className="text-sm text-gray-500">{report.date}</p>
+              <p className="text-sm text-gray-500">
+                {report.date instanceof Date ? report.date.toLocaleDateString() : report.date}
+              </p>
               <h2 className="mt-1 text-xl font-semibold">{report.title}</h2>
             </Link>
           ))}
