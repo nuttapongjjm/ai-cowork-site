@@ -28,10 +28,15 @@ Content is generated automatically via a Claude API pipeline and committed to th
 - Folder conventions defined (YYYY-MM-DD for dailies, slug names for evergreen content)
 - First daily report generated and committed (2026-06-11)
 - Automated content pipeline operational (scheduled task via Claude/Cowork)
+- Second pipeline run completed (2026-06-11): 3 new evergreen content files added
+  - `case-study/ai-inventory-management-thai-retail.md`
+  - `business-ideas/ai-contract-review-thai-sme.md`
+  - `automation/ai-invoice-processing-pipeline.md`
 
 ### 🚧 In Progress
-- Content pipeline reliability — first full multi-file run executing today
+- Content pipeline reliability — second full multi-file run completed today
 - Site build configuration (Astro/Next.js frontend not yet confirmed)
+- Git auto-commit step: shell environment unavailable during 2026-06-11 pipeline run — files written but not yet committed; manual `git commit` required
 
 ### 📋 Backlog
 - [ ] Frontend site build (choose Astro vs. Next.js vs. plain 11ty)
@@ -42,6 +47,7 @@ Content is generated automatically via a Claude API pipeline and committed to th
 - [ ] Thai language versions of key posts
 - [ ] Content quality scoring and human review workflow
 - [ ] Analytics integration (Plausible or simple GA4)
+- [ ] Pipeline resilience: retry logic when shell environment fails to start
 
 ---
 
@@ -79,3 +85,5 @@ Content is generated automatically via a Claude API pipeline and committed to th
 ## Notes
 
 The daily automation pipeline is the core engine of this product. Reliability of the pipeline directly determines content cadence. Priority should be given to monitoring and alerting for failed runs before investing in frontend polish.
+
+The `prompts/daily-cowork.md` file is currently empty — the pipeline is running on defaults. Populate this file to customize what content is generated each day (e.g., a specific topic, news item to reference, or category focus).
